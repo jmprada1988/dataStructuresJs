@@ -3,4 +3,4 @@ sumRange = (num) => {
     return num + sumRange(num - 1);
 }
 
-console.log(sumRange(20));
+console.log(sumRange(4000));
