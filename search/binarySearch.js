@@ -86,5 +86,8 @@ search = (arr, val) => {
     return arr[middle] === val ? `${middle} was found in ${counter} attepms` : `Traversed data in ${counter} truns, Number not found`
 }
 
+
+
+
 console.log(search(nums,  1000));
 

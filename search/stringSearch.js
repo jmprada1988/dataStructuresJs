@@ -11,4 +11,4 @@ stringSearch = (str, subStr) => {
  return counter;
 }
 
-console.log(stringSearch(myStr, 'hey'));
+console.log(stringSearch(myStr, 'hel'));

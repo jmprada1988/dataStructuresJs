@@ -72,6 +72,18 @@ searchInArr = (arr, num) => {
     }
     return -1;
 }
-let test = searchInArr(states, "North Carolina");
 
-console.log(states);
+
+
+
+
+
+let func = (arr, val) => {
+    for(let i = 0; i< arr.length; i++){
+        if(arr[i]=== val) return `${val} is at position ${i} `;
+    }
+    return -1
+}
+
+let test = func(states, "North Carolina");
+console.log(test);
