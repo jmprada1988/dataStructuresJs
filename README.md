@@ -7,20 +7,20 @@ Make sure you have jest install in the system
 
 ## yarn
 
-yarn add -g jest
+```yarn add -g jest```
 
 ## npm
 
-npm install -g jest
+```npm install -g jest```
 
 #### run all tests
 
-jest
+```jest```
 
 #### run a particular test
 
-jest ./folder/test.js
+```jest ./folder/test.js```
 
 #### run a single test in watch mode
 
-jest ./folder/test.js --watch
+```jest ./folder/test.js --watch```
