@@ -3,24 +3,24 @@
 A complete masterclass in analisys of alrorithms and performance meassured by the big O notation using JavaScript
 It covers details of arrays, objects list stack queues and more complex data structures.
 
-Make sure you have jest install in the system
+Make sure you have jest installed in the system
 
 ## yarn
 
-yarn add -g jest
+```yarn add -g jest```
 
 ## npm
 
-npm install -g jest
+```npm install -g jest```
 
 #### run all tests
 
-jest
+```jest```
 
 #### run a particular test
 
-jest ./folder/test.js
+```jest ./folder/test.js```
 
 #### run a single test in watch mode
 
-jest ./folder/test.js --watch
+```jest ./folder/test.js --watch```
