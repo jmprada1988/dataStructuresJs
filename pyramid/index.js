@@ -28,5 +28,20 @@ function pyramid(n) {
     console.log(floor);
   }
 }
-pyramid(4);
-module.exports = pyramid;
+
+function recursivePyramid(n, row = 0, floor = "") {
+  if (row === n) return;
+  if (floor.length === 2 * n - 1) {
+    console.log(floor);
+    return recursivePyramid(n, row + 1);
+  }
+  let middle = Math.floor((2 * n - 1) / 2);
+  let add =
+    middle - row <= floor.length && middle + row >= floor.length ? "#" : " ";
+  recursivePyramid(n, row, floor + add);
+}
+
+module.exports = {
+  pyramid,
+  recursivePyramid,
+};
