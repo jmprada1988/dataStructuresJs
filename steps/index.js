@@ -32,5 +32,18 @@ function steps(n) {
   }
 }
 
+function recursiveSteps(n, row = 0, stair = '') {
+  if(n === row) return;
+  if(n === stair.length) {
+    console.log(stair);
+    return recursiveSteps(n, row + 1)
+  }
+  const add = stair.length <= row ? "#" : " "
+  recursiveSteps(n, row, stair +  add)
+}
 
-module.exports = steps;
+
+module.exports = {
+  steps,
+  recursiveSteps
+};

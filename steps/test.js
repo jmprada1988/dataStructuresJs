@@ -1,4 +1,4 @@
-const steps = require('./index');
+const {recursiveSteps, steps} = require('./index');
 
 beforeEach(() => {
   jest.spyOn(console, 'log');
@@ -32,3 +32,12 @@ test('steps called with n = 3', () => {
   expect(console.log.mock.calls[2][0]).toEqual('###');
   expect(console.log.mock.calls.length).toEqual(3);
 });
+
+test('recursiveSteps called with n = 4', () => {
+  recursiveSteps(4);
+  expect(console.log.mock.calls[0][0]).toEqual("#   ")
+  expect(console.log.mock.calls[1][0]).toEqual("##  ")
+  expect(console.log.mock.calls[2][0]).toEqual("### ")
+  expect(console.log.mock.calls[3][0]).toEqual("####")
+  expect(console.log.mock.calls.length).toEqual(4);
+})
