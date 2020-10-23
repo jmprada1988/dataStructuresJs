@@ -15,4 +15,11 @@ function vowels(str) {
   return count;
 }
 
-module.exports = vowels;
+function regexpVowelCount(str) {
+  const found = str.match(/[aeiou]/gi);
+  return found ? found.length : 0;
+}
+module.exports = {
+  regexpVowelCount,
+  vowels,
+};
