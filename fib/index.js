@@ -28,4 +28,12 @@ function iterativeFib(n) {
   return next;
 }
 
-module.exports = { iterativeFib, recursiveFib };
+function iterativeFib2(n) {
+  let results = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    results.push(results[i - 1] + results[i - 2]);
+  }
+  return results[n];
+}
+
+module.exports = { iterativeFib, iterativeFib2, recursiveFib };
