@@ -9,8 +9,7 @@
 //   fib(4) === 3
 // simple recursive solution
 function recursiveFib(n) {
-  if (n < 1) return 0;
-  if (n < 2) return 1;
+  if (n < 2) return n;
   return recursiveFib(n - 2) + recursiveFib(n - 1);
 }
 
