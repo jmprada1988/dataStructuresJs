@@ -8,9 +8,24 @@
 // Example:
 //   fib(4) === 3
 // simple recursive solution
-function fib(n) {
-  if (n <= 2) return 1;
-  return fib(n - 2) + fib(n - 1);
+function recursiveFib(n) {
+  if (n < 1) return 0;
+  if (n < 2) return 1;
+  return recursiveFib(n - 2) + recursiveFib(n - 1);
 }
 
-module.exports = fib;
+function iterativeFib(n) {
+  let previousFirts = 0,
+    previousSecond = 1,
+    next = 1;
+
+  for (let i = 2; i <= n; i++) {
+    next = previousFirts + previousSecond;
+    previousFirts = previousSecond;
+    previousSecond = next;
+  }
+
+  return next;
+}
+
+module.exports = { iterativeFib, recursiveFib };
