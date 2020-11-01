@@ -47,6 +47,9 @@ test("calculates correct iterativeFib value for 3", () => {
 test("calculates correct memoizeFib value for 4", () => {
   expect(memoizeFib(4)).toEqual(3);
 });
+test("calculates correct memoizeFib value for 155", () => {
+  expect(memoizeFib(155)).toEqual(1.1056030715609085e32);
+});
 
 test("calculates correct iterativeFib2 value for 15", () => {
   expect(iterativeFib2(39)).toEqual(63245986);

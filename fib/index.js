@@ -10,7 +10,7 @@
 // simple recursive solution
 function recursiveFib(n) {
   if (n < 2) return n;
-  return recursiveFib(n - 2) + recursiveFib(n - 1);
+  return memoizeFib(n - 2) + memoizeFib(n - 1);
 }
 
 function iterativeFib(n) {
@@ -48,6 +48,5 @@ function memoize(fn) {
   };
 }
 const memoizeFib = memoize(recursiveFib);
-console.log(memoizeFib(45));
 
 module.exports = { iterativeFib, iterativeFib2, recursiveFib, memoizeFib };
