@@ -35,4 +35,19 @@ function iterativeFib2(n) {
   return results[n];
 }
 
-module.exports = { iterativeFib, iterativeFib2, recursiveFib };
+function memoize(fn) {
+  const cache = {};
+  return function (...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+    const results = fn.apply(this, args);
+
+    cache[args] = results;
+    return results;
+  };
+}
+const memoizeFib = memoize(recursiveFib);
+console.log(memoizeFib(45));
+
+module.exports = { iterativeFib, iterativeFib2, recursiveFib, memoizeFib };
