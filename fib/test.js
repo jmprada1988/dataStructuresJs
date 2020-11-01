@@ -1,4 +1,9 @@
-const { recursiveFib, iterativeFib2, iterativeFib } = require("./index");
+const {
+  recursiveFib,
+  iterativeFib2,
+  iterativeFib,
+  memoizeFib,
+} = require("./index");
 
 test("recursiveFib function is defined", () => {
   expect(typeof recursiveFib).toEqual("function");
@@ -39,8 +44,8 @@ test("calculates correct iterativeFib value for 3", () => {
   expect(iterativeFib(3)).toEqual(2);
 });
 
-test("calculates correct iterativeFib value for 4", () => {
-  expect(iterativeFib(4)).toEqual(3);
+test("calculates correct memoizeFib value for 4", () => {
+  expect(memoizeFib(4)).toEqual(3);
 });
 
 test("calculates correct iterativeFib2 value for 15", () => {
