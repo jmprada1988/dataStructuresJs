@@ -20,26 +20,45 @@ class Queue {
     this.b = new Stack();
   }
   add(item) {
-    if (this.b.peek()) {
-      this.a.push(item);
-      this.a.push(this.b.pop());
-    } else {
-      this.b.push(item);
-    }
+    this.a.push(item);
   }
   remove() {
-    return this.a.peek() ? this.a.pop() : this.b.pop();
+    let n = null;
+    while (this.a.peek()) {
+      this.b.push(this.a.pop());
+    }
+    n = this.b.pop();
+    while (this.b.peek()) {
+      this.a.push(this.b.pop());
+    }
+    return n;
   }
   peek() {
-    return this.a.peek() ? this.a.peek() : this.b.peek();
+    let n = null;
+    while (this.a.peek()) {
+      this.b.push(this.a.pop());
+    }
+    n = this.b.peek();
+    while (this.b.peek()) {
+      this.a.push(this.b.pop());
+    }
+    return n;
   }
 }
 
 const q = new Queue();
 q.add(1);
 q.add(2);
+q.add(3);
+q.add(4);
+q.add(5);
+q.add(6);
 q.peek(); // returns 1
-q.remove(); // returns 1
-q.remove(); // returns 2
+console.log(q.remove()); // returns 1
+console.log(q.remove()); // returns 2
+console.log(q.remove()); // returns 3
+console.log(q.remove()); // returns 4
+console.log(q.remove()); // returns 5
+console.log(q.remove()); // returns 6
 
 module.exports = Queue;
