@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+</head>
+<body>
+<video width="320" height="240" autoplay x-webkit-airplay="allow">
+  your brouser does not support video tag
+</video>
+</body>
+<script>
+  window.onload = function() {
+    function isOnScreen() {
+      return document.querySelector('video')
+      
+    }
+    function removeVideo() {
+      const vid = document.querySelector('video')
+      vid.remove()
+    }
+    setTimeout(function(){
+      console.log(isOnScreen())
+    }, 1000)
+    setTimeout(function(){
+      console.log(isOnScreen())
+    }, 3000)
+    setTimeout(function(){
+      console.log(isOnScreen())
+      removeVideo()
+    }, 6000)
+  }
+</script>
+</html>
