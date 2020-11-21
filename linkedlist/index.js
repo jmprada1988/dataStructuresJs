@@ -14,14 +14,7 @@ class LinkedList {
     this.head = null;
   }
   insertFirst(data) {
-    const n = new Node(data);
-
-    if (this.head) {
-      n.next = this.head;
-      this.head = n;
-    } else {
-      this.head = n;
-    }
+    this.head = new Node(data, this.head);
   }
 }
 
