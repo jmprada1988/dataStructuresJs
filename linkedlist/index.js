@@ -9,6 +9,20 @@ class Node {
   }
 }
 
-class LinkedList {}
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+  insertFirst(data) {
+    const n = new Node(data);
+
+    if (this.head) {
+      n.next = this.head;
+      this.head = n;
+    } else {
+      this.head = n;
+    }
+  }
+}
 
 module.exports = { Node, LinkedList };
