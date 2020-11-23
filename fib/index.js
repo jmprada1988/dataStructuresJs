@@ -8,6 +8,8 @@
 // Example:
 //   fib(4) === 3
 // simple recursive solution
+
+const { memoize } = require("../utils/index");
 function recursiveFib(n) {
   if (n < 2) return n;
   return memoizeFib(n - 2) + memoizeFib(n - 1);
@@ -35,18 +37,6 @@ function iterativeFib2(n) {
   return results[n];
 }
 
-function memoize(fn) {
-  const cache = {};
-  return function (...args) {
-    if (cache[args]) {
-      return cache[args];
-    }
-    const results = fn.apply(this, args);
-
-    cache[args] = results;
-    return results;
-  };
-}
 const memoizeFib = memoize(recursiveFib);
 
 module.exports = { iterativeFib, iterativeFib2, recursiveFib, memoizeFib };
