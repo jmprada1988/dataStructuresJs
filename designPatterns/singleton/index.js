@@ -20,6 +20,12 @@ let Singleton = (function () {
   };
   return _static;
 })();
-
-const testInstance = Singleton.getInstance({ pointX: 3.45, pointY: 4.322 });
-console.log(testInstance.pointX);
+const options = {
+  pointX: 654321,
+  pointY: 123456,
+};
+const testInstance = (data = options) => Singleton.getInstance(data);
+console.log(testInstance.pointY);
+module.exports = {
+  init: testInstance,
+};
