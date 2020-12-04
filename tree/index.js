@@ -27,8 +27,13 @@ class Tree {
   constructor() {
     this.root = null;
   }
-  traverseBF(node, cb) {
-    return cb(node);
+  traverseBF(fn) {
+    const iter = [this.root];
+    while (iter.length) {
+      const node = iter.shift();
+      iter.push(...node.children);
+      fn(node);
+    }
   }
 }
 
