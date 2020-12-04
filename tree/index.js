@@ -23,6 +23,13 @@ class Node {
   }
 }
 
-class Tree {}
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+  traverseBF(node, cb) {
+    return cb(node);
+  }
+}
 
 module.exports = { Tree, Node };
