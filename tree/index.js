@@ -18,9 +18,8 @@ class Node {
   add(value) {
     return this.children.push(new Node(value));
   }
-  remove(n) {
-    const index = this.data.indexOf(n);
-    return index && this.data.slice(index, 1);
+  remove(value) {
+    this.children = this.children.filter((node) => node.data !== value);
   }
 }
 
