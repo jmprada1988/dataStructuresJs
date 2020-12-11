@@ -17,6 +17,7 @@ class Node {
     this.left = null;
     this.right = null;
   }
+  // isert node keeping bst order
   insert(data) {
     if(data < this.data && this.left) {
       this.left.insert(data)
@@ -29,6 +30,7 @@ class Node {
     }
     
   }
+  // returns the found node or null
   contains(data) {
     if(this.data === data) return this;
     if(this.data < data && this.right) {
