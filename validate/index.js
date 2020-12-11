@@ -5,17 +5,17 @@
 // every node's right hand child is greater than
 // the parent
 
-function validate(node, min = null, max = null) {
-  if(max !== null && node.data > max) {
+function validate(node, low = null, high = null) {
+  if(high !== null && node.data > high) {
     return false;
   }
-  if(min !== null && node.data < min) {
+  if(low !== null && node.data < low) {
     return false;
   }
-  if(node.left && !validate(node.left, min, node.data)) {
+  if(node.left && !validate(node.left, low, node.data)) {
     return false;
   }
-  if(node.right && !validate(node.right, node.data, max )) {
+  if(node.right && !validate(node.right, node.data, high )) {
     return false;
   }
   return true;
