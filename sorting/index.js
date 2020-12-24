@@ -5,7 +5,7 @@
 const swap = (arr, idx1, idx2) => {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
   },
-  data = [89, 1, 2, 3, 48, 5, 6, 7, 10, 45, 56, 67, 87];
+  data = [89, 1];
 
 function bubbleSort(arr) {
   //variable to optimaze iterations unneeded
@@ -37,8 +37,25 @@ function selectionSort(arr) {
   return arr;
 }
 
-function mergeSort(arr) {}
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  const center = Math.floor(arr.length / 2);
+  return merge(mergeSort(arr.slice(0, center)), mergeSort(arr.slice(center)));
+}
 
-function merge(left, right) {}
+function merge(left, right) {
+  const result = [];
+  while (left.length && right.length) {
+    if (left[0] > right[0]) {
+      result.push(right.shift());
+    } else {
+      result.push(left.shift());
+    }
+  }
+
+  return [...result, ...left, ...right];
+}
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
