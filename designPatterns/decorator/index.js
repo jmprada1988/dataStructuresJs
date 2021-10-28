@@ -1,7 +1,6 @@
 // create a constructor which can be decorated
-
 function TeslaUnit({
-  type,
+  vehicleType,
   model,
   make,
   weigth,
@@ -11,7 +10,7 @@ function TeslaUnit({
   hp,
   range,
 }) {
-  this.vehicleType = type || "Sedan";
+  this.vehicleType = vehicleType || "Sedan";
   this.model = model || "Plaid";
   this.make = make || "Tesla";
   this.weigth = weigth || "1200";
@@ -56,7 +55,7 @@ function CustomSpecs(type) {
 // example Vehicle Constructor
 
 const hertzOrder = new TeslaUnit({
-  type: "Sedan",
+  vehicleType: "Sedan",
   model: "S",
   make: "Tesla",
   weigth: 1750,
@@ -140,4 +139,14 @@ Wheels(sedans);
 Interior(sedans);
 // Long Range Decorator Should not go with Performance at Tesla
 LongRange(sedans);
-console.log("Price with customizations:", sedans.price());
+console.log(sedans.price()); // 156115.4
+
+module.exports = {
+  TeslaUnit,
+  CustomSpecs,
+  Performance,
+  LongRange,
+  Painting,
+  Wheels,
+  Interior,
+};
